@@ -1,0 +1,60 @@
+---
+const stories = [
+  {
+    title: "A Clinic in Kaduna",
+    category: "Infrastructure",
+    excerpt: "How a community built a lifeline for 500 mothers in just three months.",
+    image: "https://images.unsplash.com/photo-1576091160550-217358c7e618?q=80&w=2000&auto=format&fit=crop"
+  },
+  {
+    title: "Amara's Journey",
+    category: "Success Story",
+    excerpt: "Overcoming complications to celebrate a healthy first birthday.",
+    image: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=2000&auto=format&fit=crop"
+  },
+  {
+    title: "Nutrition First",
+    category: "Education",
+    excerpt: "Teaching locally-sourced nutritional planning for long-term health.",
+    image: "https://images.unsplash.com/photo-1509099836639-18ba1795216d?q=80&w=2000&auto=format&fit=crop"
+  }
+];
+---
+
+<section class="bg-bone py-24 px-6">
+  <div class="container mx-auto">
+    
+    <div class="flex justify-between items-end mb-16">
+      <div class="max-w-xl">
+        <h2 class="font-serif text-4xl text-primary font-bold mb-4">Voices from the Field</h2>
+        <p class="text-charcoal/80 text-lg">Real stories of resilience, hope, and the transformative power of care.</p>
+      </div>
+      <a href="#" class="hidden md:inline-block text-primary font-bold hover:text-accent transition-colors border-b-2 border-accent pb-1">View All Stories</a>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {stories.map(story => (
+        <article class="group cursor-pointer">
+          <div class="relative overflow-hidden aspect-[4/5] mb-6 bg-primary/10">
+            <img 
+              src={story.image} 
+              alt={story.title} 
+              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            />
+            <div class="absolute top-4 left-4 bg-white/90 text-primary text-xs font-bold px-3 py-1 uppercase tracking-wider">
+              {story.category}
+            </div>
+          </div>
+          <h3 class="font-serif text-2xl text-primary font-bold mb-3 group-hover:text-accent transition-colors">{story.title}</h3>
+          <p class="text-charcoal/70 leading-relaxed mb-4">{story.excerpt}</p>
+          <span class="text-primary font-semibold text-sm uppercase tracking-wide group-hover:translate-x-2 transition-transform inline-block">Read Story &rarr;</span>
+        </article>
+      ))}
+    </div>
+
+    <div class="mt-12 text-center md:hidden">
+       <a href="#" class="inline-block text-primary font-bold hover:text-accent transition-colors border-b-2 border-accent pb-1">View All Stories</a>
+    </div>
+
+  </div>
+</section>

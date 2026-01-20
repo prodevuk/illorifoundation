@@ -1,0 +1,20 @@
+@import "tailwindcss";
+
+@theme {
+  /* Brand Colors */
+  --color-primary: #005F5F; /* Deep Authority Teal */
+  --color-accent: #D4AF37;  /* Legacy Gold */
+  --color-bone: #F9F7F2;    /* Warm Bone */
+  --color-charcoal: #333333; /* Charcoal Slate */
+
+  /* Typography */
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-serif: "Playfair Display", serif;
+}
+
+@layer base {
+  body {
+    /* Apply "Warm Bone" background and "Charcoal Slate" text by default */
+    @apply bg-bone text-charcoal;
+  }
+}

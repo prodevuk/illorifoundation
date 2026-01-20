@@ -1,0 +1,72 @@
+---
+import Logo from './Logo.astro';
+---
+
+<footer class="bg-primary text-bone border-t border-accent/20">
+  <div class="container mx-auto px-6 py-20">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-24">
+      
+      <!-- Brand Column -->
+      <div class="md:col-span-1 space-y-6">
+        <div class="flex items-center gap-3">
+            <Logo class="h-10 w-10 text-accent" />
+            <span class="font-serif text-xl tracking-widest uppercase font-bold">Ilori</span>
+        </div>
+        <p class="text-bone/60 text-sm leading-relaxed">
+          Nurturing the future through the power of the first 1,000 days. A registered 501(c)(3) non-profit organization.
+        </p>
+        <div class="flex gap-4 pt-2">
+            <!-- Social Placeholders -->
+            <a href="#" class="w-8 h-8 rounded-full border border-bone/20 flex items-center justify-center hover:bg-accent hover:border-accent hover:text-primary transition-all">
+                <span class="sr-only">Twitter</span>
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg>
+            </a>
+            <a href="#" class="w-8 h-8 rounded-full border border-bone/20 flex items-center justify-center hover:bg-accent hover:border-accent hover:text-primary transition-all">
+                <span class="sr-only">Instagram</span>
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5" stroke-width="2"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" stroke-width="2"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5" stroke-width="2"></line></svg>
+            </a>
+        </div>
+      </div>
+
+      <!-- Links Column -->
+      <div>
+        <h4 class="font-bold text-accent uppercase tracking-widest text-sm mb-6">Explore</h4>
+        <ul class="space-y-4 text-sm text-bone/80">
+            <li><a href="#mission" class="hover:text-white transition-colors">Our Mission</a></li>
+            <li><a href="#impact" class="hover:text-white transition-colors">Impact Reports</a></li>
+            <li><a href="#campaigns" class="hover:text-white transition-colors">Campaigns</a></li>
+            <li><a href="#team" class="hover:text-white transition-colors">Team & Board</a></li>
+        </ul>
+      </div>
+
+      <!-- Legal Column -->
+      <div class="hidden">
+        <h4 class="font-bold text-accent uppercase tracking-widest text-sm mb-6">Transparency</h4>
+        <ul class="space-y-4 text-sm text-bone/80">
+            <li><a href="#" class="hover:text-white transition-colors">Financials</a></li>
+            <li><a href="#" class="hover:text-white transition-colors">Privacy Policy</a></li>
+            <li><a href="#" class="hover:text-white transition-colors">Terms of Service</a></li>
+            <li><a href="#" class="hover:text-white transition-colors">Contact Us</a></li>
+        </ul>
+      </div>
+
+       <!-- Newsletter Column -->
+       <div>
+        <h4 class="font-bold text-accent uppercase tracking-widest text-sm mb-6">Stay Informed</h4>
+        <p class="text-bone/60 text-sm mb-4">Updates on our latest work in the field.</p>
+        <form class="flex flex-col gap-2">
+            <input type="email" placeholder="Email Address" class="bg-bone/5 border border-bone/20 text-bone px-4 py-2 rounded-sm focus:outline-none focus:border-accent" />
+            <button class="bg-bone text-primary font-bold px-4 py-2 rounded-sm hover:bg-accent transition-colors">Subscribe</button>
+        </form>
+      </div>
+
+    </div>
+
+    <div class="border-t border-white/5 mt-16 pt-8 flex flex-col items-center gap-6">
+        <Logo class="h-48 w-48 text-accent" />
+        <div class="text-center text-xs text-bone/40">
+            &copy; {new Date().getFullYear()} Ilori Foundation. All rights reserved.
+        </div>
+    </div>
+  </div>
+</footer>
