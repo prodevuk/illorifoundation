@@ -1,72 +1,143 @@
 ---
 import Logo from './Logo.astro';
+import { Image } from 'astro:assets';
+import sdgWheel from '../assets/images/sdg_wheel.png';
 ---
 
-<footer class="bg-primary text-bone border-t border-accent/20">
-  <div class="container mx-auto px-6 py-20">
-    <div class="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-24">
-      
-      <!-- Brand Column -->
-      <div class="md:col-span-1 space-y-6">
-        <div class="flex items-center gap-3">
-            <Logo class="h-10 w-10 text-accent" />
-            <span class="font-serif text-xl tracking-widest uppercase font-bold">Ilori</span>
+<footer class="bg-primary text-bone border-t border-accent/20 relative overflow-hidden">
+  
+  <!-- Decorative Accent Element -->
+  <div class="absolute top-0 right-0 w-64 h-64 bg-accent/5 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl"></div>
+  
+  <div class="container mx-auto px-6 pt-24 pb-12">
+    
+    <!-- Footer Top: Branding & High-Impact CTA -->
+    <div class="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-12 pb-20 border-b border-bone/10">
+      <div class="max-w-xl space-y-6">
+        <div class="flex items-center gap-4">
+          <Logo class="h-12 w-12 text-accent" />
+          <span class="font-serif text-3xl tracking-tight font-bold">Ilori <span class="italic font-normal text-accent">Foundation</span></span>
         </div>
-        <p class="text-bone/60 text-sm leading-relaxed">
-          Nurturing the future through the power of the first 1,000 days. A registered 501(c)(3) non-profit organization.
+        <p class="text-bone/70 text-xl leading-relaxed font-sans italic">
+          "Ensuring every mother, newborn, and young woman has the visibility they deserve in our global health systems."
         </p>
-        <div class="flex gap-4 pt-2">
-            <!-- Social Placeholders -->
-            <a href="#" class="w-8 h-8 rounded-full border border-bone/20 flex items-center justify-center hover:bg-accent hover:border-accent hover:text-primary transition-all">
-                <span class="sr-only">Twitter</span>
-                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg>
-            </a>
-            <a href="#" class="w-8 h-8 rounded-full border border-bone/20 flex items-center justify-center hover:bg-accent hover:border-accent hover:text-primary transition-all">
-                <span class="sr-only">Instagram</span>
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5" stroke-width="2"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" stroke-width="2"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5" stroke-width="2"></line></svg>
-            </a>
+      </div>
+      
+      <div class="w-full lg:w-auto">
+        <a href="/contact" class="inline-flex items-center gap-4 bg-accent text-primary font-bold py-5 px-12 rounded-sm hover:bg-white transition-all transform hover:-translate-y-1 shadow-2xl group">
+          Make a Lasting Impact
+          <svg class="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- Footer Middle: Navigation Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-16 py-20">
+      
+      <!-- Column 1: Mission & Contact -->
+      <div class="lg:col-span-4 space-y-8">
+        <h4 class="font-serif text-2xl text-accent italic">The Mission</h4>
+        <p class="text-bone/60 leading-relaxed text-lg max-w-sm">
+          A women-led social impact initiative dismantling health inequalities through evidence-based care and community-informed data.
+        </p>
+        <div class="space-y-4 pt-4">
+          <a href="mailto:info@ilorifoundation.org" class="flex items-center gap-3 text-bone/80 hover:text-accent transition-colors group">
+            <div class="w-10 h-10 rounded-full border border-accent/20 flex items-center justify-center group-hover:border-accent">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+            </div>
+            info@ilorifoundation.org
+          </a>
         </div>
       </div>
 
-      <!-- Links Column -->
-      <div>
-        <h4 class="font-bold text-accent uppercase tracking-widest text-sm mb-6">Explore</h4>
-        <ul class="space-y-4 text-sm text-bone/80">
-            <li><a href="#mission" class="hover:text-white transition-colors">Our Mission</a></li>
-            <li><a href="#impact" class="hover:text-white transition-colors">Impact Reports</a></li>
-            <li><a href="#campaigns" class="hover:text-white transition-colors">Campaigns</a></li>
-            <li><a href="#team" class="hover:text-white transition-colors">Team & Board</a></li>
+      <!-- Column 2: Navigation Links -->
+      <div class="lg:col-span-2">
+        <h4 class="font-sans font-bold text-accent uppercase tracking-widest text-xs mb-8">Navigation</h4>
+        <ul class="space-y-4 font-sans text-bone/70">
+          <li><a href="/#about" class="hover:text-accent transition-colors block">Who We Are</a></li>
+          <li><a href="/founder" class="hover:text-accent transition-colors block">Founder's Vision</a></li>
+          <li><a href="/#focus" class="hover:text-accent transition-colors block">Our Focus Areas</a></li>
+          <li><a href="/#impact" class="hover:text-accent transition-colors block">Impact Reports</a></li>
+          <li><a href="/#stories" class="hover:text-accent transition-colors block">Human Stories</a></li>
         </ul>
       </div>
 
-      <!-- Legal Column -->
-      <div class="hidden">
-        <h4 class="font-bold text-accent uppercase tracking-widest text-sm mb-6">Transparency</h4>
-        <ul class="space-y-4 text-sm text-bone/80">
-            <li><a href="#" class="hover:text-white transition-colors">Financials</a></li>
-            <li><a href="#" class="hover:text-white transition-colors">Privacy Policy</a></li>
-            <li><a href="#" class="hover:text-white transition-colors">Terms of Service</a></li>
-            <li><a href="#" class="hover:text-white transition-colors">Contact Us</a></li>
+      <!-- Column 3: Resource Links -->
+      <div class="lg:col-span-2">
+        <h4 class="font-sans font-bold text-accent uppercase tracking-widest text-xs mb-8">Resources</h4>
+        <ul class="space-y-4 font-sans text-bone/70">
+          <li><a href="#" class="hover:text-accent transition-colors block">News & Press</a></li>
+          <li><a href="#" class="hover:text-accent transition-colors block">Partner Portal</a></li>
+          <li><a href="#" class="hover:text-accent transition-colors block">Privacy Policy</a></li>
+          <li><a href="#" class="hover:text-accent transition-colors block">Terms of Service</a></li>
         </ul>
       </div>
 
-       <!-- Newsletter Column -->
-       <div>
-        <h4 class="font-bold text-accent uppercase tracking-widest text-sm mb-6">Stay Informed</h4>
-        <p class="text-bone/60 text-sm mb-4">Updates on our latest work in the field.</p>
-        <form class="flex flex-col gap-2">
-            <input type="email" placeholder="Email Address" class="bg-bone/5 border border-bone/20 text-bone px-4 py-2 rounded-sm focus:outline-none focus:border-accent" />
-            <button class="bg-bone text-primary font-bold px-4 py-2 rounded-sm hover:bg-accent transition-colors">Subscribe</button>
-        </form>
-      </div>
-
-    </div>
-
-    <div class="border-t border-white/5 mt-16 pt-8 flex flex-col items-center gap-6">
-        <Logo class="h-48 w-48 text-accent" />
-        <div class="text-center text-xs text-bone/40">
-            &copy; {new Date().getFullYear()} Ilori Foundation. All rights reserved.
+      <!-- Column 4: Newsletter -->
+      <div class="lg:col-span-4 space-y-8">
+        <div>
+          <h4 class="font-sans font-bold text-accent uppercase tracking-widest text-xs mb-8">Stay Informed</h4>
+          <p class="text-bone/60 mb-6">Receive updates on our research phase and upcoming initiatives.</p>
+          <form class="space-y-3">
+            <div class="relative">
+              <input 
+                type="email" 
+                placeholder="email@example.com" 
+                class="w-full bg-bone/5 border border-bone/20 text-bone px-6 py-4 rounded-sm focus:outline-none focus:border-accent transition-colors placeholder:text-bone/20" 
+              />
+            </div>
+            <button class="w-full bg-bone/10 border border-bone/20 text-bone font-bold py-4 rounded-sm hover:bg-bone hover:text-primary transition-all uppercase tracking-widest text-xs">
+              Join our network
+            </button>
+          </form>
         </div>
+        
+        <div class="space-y-4">
+          <span class="text-[10px] uppercase tracking-widest text-accent/50 font-bold block">Global Alignment</span>
+          <div class="flex items-center gap-4">
+            <div class="flex gap-1.5">
+              {[2,3,5,10].map(num => (
+                <div class="w-7 h-7 bg-white/5 border border-white/10 flex items-center justify-center text-[9px] font-bold text-bone/40 hover:text-accent hover:border-accent transition-all cursor-default" title={`SDG Goal ${num}`}>
+                  {num}
+                </div>
+              ))}
+            </div>
+            <Image src={sdgWheel} alt="UN SDG Logo" class="h-16 w-auto opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-all" />
+          </div>
+        </div>
+
+        <div class="flex gap-4">
+          <a href="#" class="w-10 h-10 rounded-full border border-bone/20 flex items-center justify-center hover:bg-accent hover:border-accent hover:text-primary transition-all">
+            <span class="sr-only">LinkedIn</span>
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+          </a>
+          <a href="#" class="w-10 h-10 rounded-full border border-bone/20 flex items-center justify-center hover:bg-accent hover:border-accent hover:text-primary transition-all">
+            <span class="sr-only">Twitter</span>
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg>
+          </a>
+        </div>
+      </div>
     </div>
+
+    <!-- Footer Bottom: Legal & Large Watermark -->
+    <div class="border-t border-bone/10 pt-12 flex flex-col lg:flex-row justify-between items-center gap-8">
+      <div class="flex flex-col items-center lg:items-start gap-2">
+        <p class="text-xs text-bone/40 uppercase tracking-widest font-bold">
+          &copy; {new Date().getFullYear()} Ilori Foundation. All rights reserved.
+        </p>
+        <p class="text-[10px] text-bone/30 uppercase tracking-[0.2em]">
+          Registered 501(c)(3) Non-Profit Organization • Evidence-Led Social Impact
+        </p>
+      </div>
+      
+      <div class="opacity-[0.03] absolute -bottom-10 right-0 pointer-events-none">
+        <Logo class="h-64 w-64 text-bone" />
+      </div>
+    </div>
+
   </div>
 </footer>

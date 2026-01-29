@@ -1,0 +1,138 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { Image } from 'astro:assets';
+import founderPortrait from '../assets/images/lilitha_ilori.JPG';
+---
+
+<Layout>
+  <Header />
+  
+  <main>
+    <!-- Hero Section: Authority & Intimacy -->
+    <section class="bg-primary text-bone py-24 md:py-40 px-6 relative overflow-hidden">
+      <div class="absolute inset-0 opacity-[0.05] pointer-events-none">
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[25vw] font-serif font-bold italic whitespace-nowrap">
+          Visionary
+        </div>
+      </div>
+      
+      <div class="container mx-auto max-w-6xl relative z-10">
+        <div class="max-w-3xl">
+          <span class="text-accent font-sans font-bold tracking-[0.3em] text-sm uppercase block mb-6 animate-fade-in">
+            Founder & Health Advocate
+          </span>
+          <h1 class="font-serif text-5xl md:text-7xl lg:text-8xl leading-[1.05] tracking-tight mb-8">
+            Olubusayo <br/>
+            <span class="text-accent italic">Lilithalethu Ilori.</span>
+          </h1>
+          <p class="font-sans text-xl md:text-2xl text-bone/80 leading-relaxed border-l-2 border-accent/40 pl-8">
+            A dedicated health advocate passionate about dismantling health inequalities and ensuring universal access to high-quality healthcare.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Biography Section: The Human-First Grid -->
+    <section class="bg-bone py-24 md:py-32 px-6 overflow-hidden">
+      <div class="container mx-auto max-w-6xl">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 items-start">
+          
+          <!-- Image Column -->
+          <div class="lg:col-span-5 relative">
+            <div class="relative z-10 aspect-[3/4] overflow-hidden shadow-2xl border border-accent/10">
+              <Image 
+                src={founderPortrait} 
+                alt="Portrait of Olubusayo Lilithalethu Ilori" 
+                class="w-full h-full object-cover mix-blend-multiply transition-transform duration-1000 hover:scale-105"
+              />
+              <div class="absolute inset-0 bg-primary/5 mix-blend-overlay"></div>
+            </div>
+            <!-- Decorative Gold Frame -->
+            <div class="absolute -bottom-8 -right-8 w-48 h-48 border-r-2 border-b-2 border-accent/30 z-0"></div>
+            <div class="absolute -top-8 -left-8 w-32 h-32 border-l-2 border-t-2 border-accent/30 z-0"></div>
+          </div>
+
+          <!-- Content Column -->
+          <div class="lg:col-span-7 space-y-12">
+            <div class="space-y-6">
+              <h2 class="font-serif text-3xl md:text-4xl text-primary leading-tight">
+                A Journey Rooted in <span class="italic font-normal">Advocacy.</span>
+              </h2>
+              <p class="text-charcoal/90 text-lg md:text-xl leading-relaxed">
+                Lilitha’s advocacy journey began while she was at university, where she became aware of significant gaps in health knowledge among young women, and how these gaps shape health decisions and outcomes.
+              </p>
+              <p class="text-charcoal/80 text-lg leading-relaxed">
+                Born and raised in South Africa and currently based in the UK, Lilitha’s work is grounded in addressing health inequalities across the Global South and under-served communities in the UK. Her approach is shaped by a strong belief that effective health interventions must be informed by adequate monitoring and evaluation systems, effective data collection, access to health education, and access to quality care.
+              </p>
+            </div>
+
+            <div class="bg-white p-8 md:p-12 border-l-4 border-accent shadow-sm space-y-4">
+              <span class="text-accent font-sans font-bold tracking-widest text-xs uppercase block">Academic Expertise</span>
+              <p class="text-charcoal/90 text-lg md:text-xl leading-relaxed italic">
+                "Lilitha holds a Master’s degree in Development Studies from the Institute of Development Studies (IDS) at the University of Sussex, with a specialisation in Health and Development."
+              </p>
+              <p class="text-charcoal/70 text-base leading-relaxed">
+                With a research background in nutrition and a particular focus on the first 1,000 days of life, her work engages with women’s reproductive health through an intersectional lens, including critical advocacy around high rates of HPV and cervical cancer.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Strategic Vision Section -->
+    <section class="bg-primary text-bone py-24 md:py-32 px-6">
+      <div class="container mx-auto max-w-4xl text-center space-y-12">
+        <div class="space-y-4">
+          <span class="text-accent font-sans font-bold tracking-[0.2em] text-sm uppercase block">The Vision</span>
+          <h2 class="font-serif text-4xl md:text-6xl leading-tight italic">
+            Building for Health Equity.
+          </h2>
+        </div>
+        
+        <p class="text-bone/80 text-xl md:text-2xl leading-relaxed max-w-3xl mx-auto">
+          Through Ilori Foundation, Lilitha aims to build sustainable, data-driven programmes that strengthen maternal nutrition, support healthy early childhood development, and advance women’s reproductive health outcomes.
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 pt-8">
+          <div class="p-8 border border-white/10 bg-white/5 hover:bg-white/10 transition-colors">
+            <h3 class="font-serif text-2xl text-accent mb-4">Better Data</h3>
+            <p class="text-bone/60 text-base leading-relaxed">
+              Better decisions through targeted interventions that reach under-served groups and improve health outcomes.
+            </p>
+          </div>
+          <div class="p-8 border border-white/10 bg-white/5 hover:bg-white/10 transition-colors">
+            <h3 class="font-serif text-2xl text-accent mb-4">Lasting Equity</h3>
+            <p class="text-bone/60 text-base leading-relaxed">
+              Enabling communities to live healthy, high-quality lives—aligned with the UN Sustainable Development Goals for 2030.
+            </p>
+          </div>
+        </div>
+
+        <div class="pt-12">
+          <a href="/contact" class="inline-flex items-center gap-4 bg-accent text-primary font-bold py-5 px-12 rounded-sm hover:bg-white transition-all transform hover:-translate-y-1 shadow-2xl group">
+            Collaborate With Us
+            <svg class="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <Footer />
+</Layout>
+
+<style>
+  @keyframes fade-in {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .animate-fade-in {
+    animation: fade-in 1s ease-out forwards;
+  }
+</style>

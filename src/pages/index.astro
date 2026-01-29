@@ -5,16 +5,20 @@ import Hero from '../components/Hero.astro';
 import MissionWindow from '../components/MissionWindow.astro';
 import ImpactStats from '../components/ImpactStats.astro';
 import LatestStories from '../components/LatestStories.astro';
+import SDGAlignment from '../components/SDGAlignment.astro';
 import Footer from '../components/Footer.astro';
+import About from '../components/About.astro';
 ---
 
 <Layout>
 	<main class="w-full">
 		<Header />
 		<Hero />
+		<About />
 		<MissionWindow />
-        <ImpactStats />
-        <LatestStories />
+        <!-- <ImpactStats /> -->
+        <!-- <LatestStories /> -->
+        <SDGAlignment />
 	</main>
     <Footer />
 </Layout>

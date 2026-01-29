@@ -1,31 +1,59 @@
 ---
 ---
-<section class="bg-bone py-20 px-6">
-  <div class="container mx-auto max-w-4xl">
+
+<section class="bg-primary py-24 md:py-32 px-6" id="focus">
+  <div class="container mx-auto max-w-6xl">
     
-    <!-- The "Gold Box" from the reference image -->
-    <div class="border-2 border-accent p-12 md:p-20 text-center relative">
-      
-      <!-- Decorative small line top -->
-      <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-bone px-4">
-        <span class="block w-2 h-2 bg-accent rounded-full"></span>
+    <div class="flex flex-col lg:flex-row gap-16 items-start">
+      <!-- Sticky Sidebar-style Header -->
+      <div class="lg:w-1/3 lg:sticky lg:top-12">
+        <span class="text-accent font-sans font-bold tracking-[0.2em] text-sm uppercase block mb-4">
+          Strategic Focus
+        </span>
+        <h2 class="font-serif text-4xl md:text-5xl text-bone leading-tight mb-6">
+          The Pillars of <br/><span class="italic text-accent">Our Impact.</span>
+        </h2>
+        <p class="text-bone/70 text-lg leading-relaxed">
+          Our work follows the life course of the mother, the newborn, and the young woman—recognizing that health outcomes are shaped across stages, not in isolation.
+        </p>
       </div>
 
-      <h2 class="font-serif text-4xl md:text-5xl text-primary font-bold mb-6 tracking-tight uppercase">
-        The 1,000 Day Window
-      </h2>
-      
-      <p class="font-sans text-charcoal/80 text-lg md:text-xl leading-relaxed max-w-2xl mx-auto">
-        From conception to a child's second birthday, the brain grows faster than at any other time. 
-        <br class="hidden md:block" />
-        <span class="font-bold text-primary">This is our window of opportunity</span> to prevent stunting and ensure a future of potential.
-      </p>
+      <!-- Impact Pillars (The "Windows") -->
+      <div class="lg:w-2/3 grid grid-cols-1 gap-12">
+        
+        <!-- Pillar 1 -->
+        <div class="group border-l border-accent/30 pl-8 md:pl-12 py-4 relative hover:border-accent transition-colors">
+          <span class="absolute -left-3 top-6 w-6 h-6 bg-accent rounded-full flex items-center justify-center text-[10px] text-primary font-bold">01</span>
+          <h3 class="font-serif text-2xl md:text-3xl text-bone mb-4 group-hover:text-accent transition-colors">
+            Maternal & Neonatal Nutrition
+          </h3>
+          <p class="text-bone/80 text-lg leading-relaxed max-w-xl">
+            We center our efforts on the critical <span class="text-accent font-semibold">first 1,000 days of life</span>, ensuring both mother and child receive the nutritional foundation required for long-term survival and development.
+          </p>
+        </div>
 
-      <!-- Decorative small line bottom -->
-      <div class="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 bg-bone px-4">
-        <svg class="w-6 h-6 text-accent" fill="currentColor" viewBox="0 0 24 24">
-           <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
-        </svg>
+        <!-- Pillar 2 -->
+        <div class="group border-l border-accent/30 pl-8 md:pl-12 py-4 relative hover:border-accent transition-colors">
+          <span class="absolute -left-3 top-6 w-6 h-6 bg-accent rounded-full flex items-center justify-center text-[10px] text-primary font-bold">02</span>
+          <h3 class="font-serif text-2xl md:text-3xl text-bone mb-4 group-hover:text-accent transition-colors">
+            Reproductive Health Education
+          </h3>
+          <p class="text-bone/80 text-lg leading-relaxed max-w-xl">
+            Empowering adolescent girls and young women with vital knowledge on HPV, cervical cancer prevention, and holistic reproductive rights across critical life stages.
+          </p>
+        </div>
+
+        <!-- Pillar 3 -->
+        <div class="group border-l border-accent/30 pl-8 md:pl-12 py-4 relative hover:border-accent transition-colors">
+          <span class="absolute -left-3 top-6 w-6 h-6 bg-accent rounded-full flex items-center justify-center text-[10px] text-primary font-bold">03</span>
+          <h3 class="font-serif text-2xl md:text-3xl text-bone mb-4 group-hover:text-accent transition-colors">
+            Data-Led Health Equity
+          </h3>
+          <p class="text-bone/80 text-lg leading-relaxed max-w-xl">
+            By pioneering community-informed and evidence-led data collection, we transform invisible health inequalities into actionable insights for decision-makers.
+          </p>
+        </div>
+
       </div>
     </div>
 

@@ -1,59 +1,132 @@
 ---
+import { Image } from 'astro:assets';
+
 const stories = [
+  {
+    title: "Amara's Journey: A Healthy First Year",
+    category: "Success Story",
+    excerpt: "Overcoming complications in rural Kaduna to celebrate a milestone healthy first birthday, made possible through community-led nutritional support.",
+    image: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=2000&auto=format&fit=crop",
+    featured: true
+  },
   {
     title: "A Clinic in Kaduna",
     category: "Infrastructure",
     excerpt: "How a community built a lifeline for 500 mothers in just three months.",
-    image: "https://images.unsplash.com/photo-1576091160550-217358c7e618?q=80&w=2000&auto=format&fit=crop"
+    image: "https://images.unsplash.com/photo-1576091160550-217358c7e618?q=80&w=2000&auto=format&fit=crop",
+    featured: false
   },
   {
-    title: "Amara's Journey",
-    category: "Success Story",
-    excerpt: "Overcoming complications to celebrate a healthy first birthday.",
-    image: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=2000&auto=format&fit=crop"
-  },
-  {
-    title: "Nutrition First",
+    title: "Nutrition First: Locally Sourced",
     category: "Education",
-    excerpt: "Teaching locally-sourced nutritional planning for long-term health.",
-    image: "https://images.unsplash.com/photo-1509099836639-18ba1795216d?q=80&w=2000&auto=format&fit=crop"
+    excerpt: "Teaching locally-sourced nutritional planning for long-term health and child development.",
+    image: "https://images.unsplash.com/photo-1509099836639-18ba1795216d?q=80&w=2000&auto=format&fit=crop",
+    featured: false
   }
 ];
 ---
 
-<section class="bg-bone py-24 px-6">
-  <div class="container mx-auto">
+<section class="bg-bone py-24 md:py-32 px-6 overflow-hidden" id="stories">
+  <div class="container mx-auto max-w-7xl">
     
-    <div class="flex justify-between items-end mb-16">
-      <div class="max-w-xl">
-        <h2 class="font-serif text-4xl text-primary font-bold mb-4">Voices from the Field</h2>
-        <p class="text-charcoal/80 text-lg">Real stories of resilience, hope, and the transformative power of care.</p>
+    <!-- Section Header -->
+    <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-8">
+      <div class="max-w-2xl">
+        <span class="text-accent font-sans font-bold tracking-[0.2em] text-sm uppercase block mb-4">
+          Human Stories
+        </span>
+        <h2 class="font-serif text-4xl md:text-6xl text-primary leading-tight">
+          Voices from <br/><span class="italic font-normal">the Field.</span>
+        </h2>
       </div>
-      <a href="#" class="hidden md:inline-block text-primary font-bold hover:text-accent transition-colors border-b-2 border-accent pb-1">View All Stories</a>
+      <div class="flex flex-col items-start md:items-end gap-4">
+        <p class="text-charcoal/70 text-lg max-w-xs md:text-right">
+          Real stories of resilience, hope, and the transformative power of data-led care.
+        </p>
+        <a href="/stories" class="group flex items-center gap-2 text-primary font-bold uppercase tracking-widest text-xs border-b border-accent pb-1 hover:text-accent transition-colors">
+          View All Narrative Reports
+          <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+          </svg>
+        </a>
+      </div>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      {stories.map(story => (
-        <article class="group cursor-pointer">
-          <div class="relative overflow-hidden aspect-[4/5] mb-6 bg-primary/10">
-            <img 
-              src={story.image} 
-              alt={story.title} 
-              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-            />
-            <div class="absolute top-4 left-4 bg-white/90 text-primary text-xs font-bold px-3 py-1 uppercase tracking-wider">
-              {story.category}
+    <!-- Editorial Grid -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+      
+      {/* Featured Story (Left Column) */}
+      <div class="lg:col-span-7">
+        {stories.filter(s => s.featured).map(story => (
+          <article class="group cursor-pointer space-y-8">
+            <div class="relative aspect-[16/10] overflow-hidden shadow-2xl">
+              <img 
+                src={story.image} 
+                alt={story.title} 
+                class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+              />
+              <div class="absolute inset-0 bg-primary/10 mix-blend-multiply group-hover:bg-primary/0 transition-colors duration-700"></div>
+              <div class="absolute top-6 left-6 bg-bone px-4 py-2 shadow-lg">
+                <span class="text-primary font-bold text-[10px] uppercase tracking-[0.2em]">
+                  {story.category}
+                </span>
+              </div>
             </div>
-          </div>
-          <h3 class="font-serif text-2xl text-primary font-bold mb-3 group-hover:text-accent transition-colors">{story.title}</h3>
-          <p class="text-charcoal/70 leading-relaxed mb-4">{story.excerpt}</p>
-          <span class="text-primary font-semibold text-sm uppercase tracking-wide group-hover:translate-x-2 transition-transform inline-block">Read Story &rarr;</span>
-        </article>
-      ))}
+            <div class="max-w-2xl space-y-4">
+              <h3 class="font-serif text-3xl md:text-4xl text-primary font-bold leading-tight group-hover:text-accent transition-colors">
+                {story.title}
+              </h3>
+              <p class="text-charcoal/80 text-xl leading-relaxed">
+                {story.excerpt}
+              </p>
+              <div class="pt-2">
+                <span class="inline-flex items-center gap-3 text-primary font-bold text-sm uppercase tracking-widest group-hover:gap-5 transition-all">
+                  Read Full Account <span class="h-px w-8 bg-accent"></span>
+                </span>
+              </div>
+            </div>
+          </article>
+        ))}
+      </div>
+
+      {/* Secondary Stories (Right Column) */}
+      <div class="lg:col-span-5 space-y-16 lg:pt-12">
+        {stories.filter(s => !s.featured).map(story => (
+          <article class="group cursor-pointer flex flex-col md:flex-row lg:flex-col gap-6 lg:gap-8 items-start">
+            <div class="w-full md:w-1/2 lg:w-full relative aspect-[4/3] overflow-hidden border border-accent/10">
+              <img 
+                src={story.image} 
+                alt={story.title} 
+                class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+              />
+              <div class="absolute top-4 left-4 bg-white/90 px-3 py-1 text-primary text-[9px] font-bold uppercase tracking-widest">
+                {story.category}
+              </div>
+            </div>
+            <div class="w-full md:w-1/2 lg:w-full space-y-3">
+              <h4 class="font-serif text-2xl text-primary font-bold group-hover:text-accent transition-colors">
+                {story.title}
+              </h4>
+              <p class="text-charcoal/70 text-base leading-relaxed line-clamp-2">
+                {story.excerpt}
+              </p>
+              <span class="text-primary/40 font-bold text-[10px] uppercase tracking-widest group-hover:text-primary transition-colors block pt-2">
+                View Narrative →
+              </span>
+            </div>
+          </article>
+        ))}
+      </div>
+
     </div>
 
-    <div class="mt-12 text-center md:hidden">
-       <a href="#" class="inline-block text-primary font-bold hover:text-accent transition-colors border-b-2 border-accent pb-1">View All Stories</a>
+    <!-- Decorative Bottom Divider -->
+    <div class="mt-32 flex justify-center">
+      <div class="flex items-center gap-4">
+        <div class="w-2 h-2 rounded-full bg-accent/30"></div>
+        <div class="w-24 h-px bg-accent/20"></div>
+        <div class="w-2 h-2 rounded-full bg-accent/30"></div>
+      </div>
     </div>
 
   </div>

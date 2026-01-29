@@ -1,27 +1,189 @@
 ---
 import Logo from './Logo.astro';
----
-<header class="w-full absolute top-0 left-0 bg-transparent text-bone py-6 px-8 flex justify-between items-center z-50 border-b border-white/10">
-  <a href="/" class="flex items-center gap-3 group">
-    <Logo class="h-20 w-20 text-bone group-hover:text-accent transition-colors duration-300" />
-    <div class="text-2xl font-serif tracking-widest uppercase">
-      Ilori <span class="font-bold">Foundation</span>
-    </div>
-  </a>
-  
-  <nav class="hidden md:flex space-x-8 text-sm font-sans tracking-wide">
-    <a href="#" class="hover:text-accent transition-colors">Our Mission</a>
-    <a href="#" class="hover:text-accent transition-colors">Impact</a>
-    <a href="#" class="hover:text-accent transition-colors">Stories</a>
-    <a href="#" class="bg-accent text-primary px-5 py-2 rounded-sm font-bold hover:bg-white hover:text-primary transition-colors">
-      Donate Now
-    </a>
-  </nav>
 
-  <!-- Mobile Menu Placeholder -->
-  <button class="md:hidden text-bone focus:outline-none">
-    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-    </svg>
-  </button>
+const navLinks = [
+  { label: "Our Mission", href: "/#about" },
+  { label: "Focus Areas", href: "/#focus" },
+  { label: "Impact", href: "/#impact" },
+  { label: "Founder", href: "/founder" },
+  // { label: "Stories", href: "/#stories" },
+];
+---
+
+<header 
+  id="main-header"
+  class="fixed top-0 left-0 w-full z-[100] transition-all duration-500 border-b border-white/5 bg-transparent"
+>
+  <div class="container mx-auto px-6 md:px-12">
+    <div class="flex justify-between items-center py-6">
+      
+      <!-- Brand Identity -->
+      <a href="/" class="flex items-center gap-3 group relative z-[110]">
+        <Logo class="h-12 w-12 text-bone group-hover:text-accent transition-colors duration-300" />
+        <div class="flex flex-col">
+          <span class="font-serif text-2xl tracking-tight text-bone group-hover:text-accent transition-colors">
+            Ilori <span class="italic font-normal">Foundation</span>
+          </span>
+          <span class="text-[8px] uppercase tracking-[0.4em] text-accent font-bold">Visibility in Action</span>
+        </div>
+      </a>
+      
+      <!-- Desktop Navigation -->
+      <nav class="hidden lg:flex items-center gap-10">
+        {navLinks.map(link => (
+          <a 
+            href={link.href} 
+            class="text-sm font-sans font-bold uppercase tracking-widest text-bone/80 hover:text-accent transition-colors relative group"
+          >
+            {link.label}
+            <span class="absolute -bottom-1 left-0 w-0 h-px bg-accent transition-all group-hover:w-full"></span>
+          </a>
+        ))}
+        
+        <a 
+          href="/contact" 
+          class="bg-accent text-primary px-8 py-3 rounded-sm font-bold uppercase tracking-widest text-xs hover:bg-white hover:text-primary transition-all transform hover:-translate-y-0.5 shadow-lg"
+        >
+          Support Us
+        </a>
+      </nav>
+
+      <!-- Mobile Menu Toggle -->
+      <button 
+        id="mobile-menu-toggle"
+        class="lg:hidden relative z-[110] p-2 text-bone hover:text-accent transition-colors focus:outline-none"
+        aria-label="Toggle Menu"
+      >
+        <div class="w-8 h-5 flex flex-col justify-between items-end">
+          <span class="w-8 h-0.5 bg-current transition-all duration-300 origin-right burger-line-1"></span>
+          <span class="w-6 h-0.5 bg-current transition-all duration-300 burger-line-2"></span>
+          <span class="w-8 h-0.5 bg-current transition-all duration-300 origin-right burger-line-3"></span>
+        </div>
+      </button>
+
+    </div>
+  </div>
+
+  <!-- Mobile Navigation Overlay -->
+  <div 
+    id="mobile-menu"
+    class="fixed inset-0 bg-primary z-[105] translate-x-full transition-transform duration-700 ease-[cubic-bezier(0.77,0,0.175,1)] flex flex-col justify-start pt-40 p-12 overflow-hidden"
+  >
+    <!-- Background Decorative Text -->
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[20vw] font-serif font-bold text-white/[0.02] whitespace-nowrap pointer-events-none select-none italic">
+      Visibility Equity Care
+    </div>
+
+    <nav class="relative z-10 flex flex-col gap-8">
+      {navLinks.map((link, index) => (
+        <a 
+          href={link.href} 
+          class="mobile-nav-link text-4xl md:text-6xl font-serif text-bone hover:text-accent transition-colors flex items-center gap-6 group opacity-0 translate-y-8"
+          style={`transition-delay: ${index * 100 + 300}ms`}
+        >
+          <span class="text-xs font-sans font-bold text-accent/40 group-hover:text-accent">0{index + 1}</span>
+          {link.label}
+        </a>
+      ))}
+      
+      <div class="pt-12 opacity-0 translate-y-8 transition-all delay-[700ms] mobile-nav-footer">
+        <a 
+          href="/contact" 
+          class="inline-block bg-accent text-primary px-10 py-5 rounded-sm font-bold uppercase tracking-widest text-sm"
+        >
+          Support Our Mission
+        </a>
+      </div>
+    </nav>
+
+    <!-- Mobile Footer Info -->
+    <div class="absolute bottom-12 left-12 right-12 flex justify-between items-end opacity-0 translate-y-4 transition-all delay-[900ms] mobile-nav-footer">
+      <div class="space-y-2">
+        <span class="text-[10px] uppercase tracking-widest text-accent font-bold block">Contact</span>
+        <p class="text-bone/40 text-sm">info@ilorifoundation.org</p>
+      </div>
+      <div class="h-12 w-12 text-accent/20">
+        <Logo />
+      </div>
+    </div>
+  </div>
 </header>
+
+<script>
+  const header = document.getElementById('main-header');
+  const toggle = document.getElementById('mobile-menu-toggle');
+  const menu = document.getElementById('mobile-menu');
+  const body = document.body;
+  const links = document.querySelectorAll('.mobile-nav-link, #mobile-menu .mobile-nav-footer a');
+
+  function toggleMenu() {
+    const isOpen = menu?.classList.contains('translate-x-0');
+    
+    if (isOpen) {
+      menu?.classList.remove('translate-x-0');
+      menu?.classList.add('translate-x-full');
+      toggle?.classList.remove('active');
+      body.style.overflow = '';
+      
+      // Reset animations
+      document.querySelectorAll('.mobile-nav-link, .mobile-nav-footer').forEach(el => {
+        el.classList.remove('opacity-100', 'translate-y-0');
+        el.classList.add('opacity-0', 'translate-y-8');
+      });
+    } else {
+      menu?.classList.remove('translate-x-full');
+      menu?.classList.add('translate-x-0');
+      toggle?.classList.add('active');
+      body.style.overflow = 'hidden';
+
+      // Trigger animations
+      setTimeout(() => {
+        document.querySelectorAll('.mobile-nav-link, .mobile-nav-footer').forEach(el => {
+          el.classList.add('opacity-100', 'translate-y-0');
+          el.classList.remove('opacity-0', 'translate-y-8');
+        });
+      }, 100);
+    }
+  }
+
+  toggle?.addEventListener('click', toggleMenu);
+
+  // Close menu on link click
+  links.forEach(link => {
+    link.addEventListener('click', () => {
+      if (menu?.classList.contains('translate-x-0')) {
+        toggleMenu();
+      }
+    });
+  });
+
+  // Header Scroll Effect
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+      header?.classList.add('bg-primary/95', 'backdrop-blur-md', 'py-4');
+      header?.classList.remove('bg-transparent', 'py-6');
+    } else {
+      header?.classList.remove('bg-primary/95', 'backdrop-blur-md', 'py-4');
+      header?.classList.add('bg-transparent', 'py-6');
+    }
+  });
+</script>
+
+<style>
+  /* Burger Animation */
+  #mobile-menu-toggle.active .burger-line-1 {
+    transform: rotate(-45deg) translate(0, 7px) scaleX(1.2);
+  }
+  #mobile-menu-toggle.active .burger-line-2 {
+    opacity: 0;
+    transform: translateX(10px);
+  }
+  #mobile-menu-toggle.active .burger-line-3 {
+    transform: rotate(45deg) translate(0, -7px) scaleX(1.2);
+  }
+
+  /* Smooth reveal for links */
+  .mobile-nav-link, .mobile-nav-footer {
+    transition: all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+</style>

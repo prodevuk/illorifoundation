@@ -1,0 +1,169 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout>
+  <Header />
+  
+  <main>
+    <!-- Hero / Intro Section -->
+    <section class="bg-primary text-bone py-24 md:py-40 px-6 relative overflow-hidden">
+      <div class="absolute inset-0 opacity-10 pointer-events-none">
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[30vw] font-serif font-bold italic whitespace-nowrap">
+          Collaboration
+        </div>
+      </div>
+      
+      <div class="container mx-auto max-w-4xl relative z-10">
+        <span class="text-accent font-sans font-bold tracking-[0.3em] text-sm uppercase block mb-6 animate-fade-in">
+          Research & Design Phase
+        </span>
+        <h1 class="font-serif text-5xl md:text-7xl leading-tight mb-8">
+          Support Our <br/><span class="italic text-accent">Vision for Equity.</span>
+        </h1>
+        <p class="font-sans text-xl md:text-2xl text-bone/80 leading-relaxed max-w-2xl border-l-2 border-accent/40 pl-8">
+          As we progress through our research and design phase, Ilori Foundation seeks to collaborate with aligned organisations, researchers, community groups, and public-sector stakeholders.
+        </p>
+      </div>
+    </section>
+
+    <!-- Exploratory Conversations Section -->
+    <section class="bg-bone py-24 px-6">
+      <div class="container mx-auto max-w-6xl">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+          <div class="lg:col-span-6 space-y-8">
+            <h2 class="font-serif text-3xl md:text-5xl text-primary leading-tight">
+              Open for <span class="italic font-normal">Exploratory Conversations.</span>
+            </h2>
+            <p class="text-charcoal/80 text-lg md:text-xl leading-relaxed">
+              We are currently open to conversations with partners interested in evidence-led approaches to maternal, neonatal, and reproductive health. Your expertise and partnership are vital to our mission's success.
+            </p>
+            <div class="pt-4">
+              <a href="#contact-form" class="bg-primary text-bone px-10 py-5 rounded-sm font-bold uppercase tracking-widest text-sm hover:bg-accent transition-all inline-block shadow-xl">
+                Get in touch
+              </a>
+            </div>
+          </div>
+          
+          <div class="lg:col-span-6 relative">
+            <div class="aspect-square bg-primary/5 rounded-full flex items-center justify-center relative">
+               <div class="w-3/4 h-3/4 border border-accent/20 rounded-full animate-pulse"></div>
+               <div class="absolute inset-0 flex items-center justify-center">
+                 <svg class="w-32 h-32 text-accent/20" fill="currentColor" viewBox="0 0 24 24">
+                   <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z" />
+                 </svg>
+               </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Details & Form Section -->
+    <section id="contact-form" class="bg-white py-24 md:py-32 px-6">
+      <div class="container mx-auto max-w-6xl">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-20">
+          
+          <!-- Contact Info -->
+          <div class="lg:col-span-5 space-y-12">
+            <div>
+              <h3 class="font-sans font-bold text-accent uppercase tracking-widest text-xs mb-8">Contact Enquiries</h3>
+              <p class="text-charcoal/60 text-lg leading-relaxed mb-8">
+                For enquiries or to explore collaboration, please reach out via the following channels.
+              </p>
+              
+              <div class="space-y-6">
+                <a href="mailto:info@ilorifoundation.org" class="flex items-center gap-6 group">
+                  <div class="w-14 h-14 rounded-full bg-primary/5 flex items-center justify-center text-primary group-hover:bg-accent group-hover:text-primary transition-all duration-300">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <span class="block text-[10px] uppercase tracking-widest text-charcoal/40 font-bold">Email Address</span>
+                    <span class="text-xl font-serif text-primary group-hover:text-accent transition-colors">info@ilorifoundation.org</span>
+                  </div>
+                </a>
+
+                <a href="https://linkedin.com/company/ilorifoundation" target="_blank" rel="noopener noreferrer" class="flex items-center gap-6 group">
+                  <div class="w-14 h-14 rounded-full bg-primary/5 flex items-center justify-center text-primary group-hover:bg-accent group-hover:text-primary transition-all duration-300">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <span class="block text-[10px] uppercase tracking-widest text-charcoal/40 font-bold">LinkedIn</span>
+                    <span class="text-xl font-serif text-primary group-hover:text-accent transition-colors">Ilori Foundation</span>
+                  </div>
+                </a>
+              </div>
+            </div>
+            
+            <div class="pt-12 border-t border-accent/10">
+              <p class="text-charcoal/40 text-sm italic">
+                * We aim to respond to all enquiries within 48 hours.
+              </p>
+            </div>
+          </div>
+
+          <!-- Contact Form -->
+          <div class="lg:col-span-7">
+            <div class="bg-bone/30 p-8 md:p-12 border border-accent/10 shadow-sm">
+              <form class="space-y-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  <div class="space-y-2">
+                    <label class="text-[10px] uppercase tracking-widest font-bold text-charcoal/60">Full Name</label>
+                    <input type="text" placeholder="Your Name" class="w-full bg-white border border-accent/10 px-6 py-4 rounded-sm focus:outline-none focus:border-accent transition-colors" />
+                  </div>
+                  <div class="space-y-2">
+                    <label class="text-[10px] uppercase tracking-widest font-bold text-charcoal/60">Email Address</label>
+                    <input type="email" placeholder="email@example.com" class="w-full bg-white border border-accent/10 px-6 py-4 rounded-sm focus:outline-none focus:border-accent transition-colors" />
+                  </div>
+                </div>
+                
+                <div class="space-y-2">
+                  <label class="text-[10px] uppercase tracking-widest font-bold text-charcoal/60">Organisation / Affiliation</label>
+                  <input type="text" placeholder="e.g., Global Health Partners" class="w-full bg-white border border-accent/10 px-6 py-4 rounded-sm focus:outline-none focus:border-accent transition-colors" />
+                </div>
+
+                <div class="space-y-2">
+                  <label class="text-[10px] uppercase tracking-widest font-bold text-charcoal/60">Interest Area</label>
+                  <select class="w-full bg-white border border-accent/10 px-6 py-4 rounded-sm focus:outline-none focus:border-accent transition-colors appearance-none cursor-pointer">
+                    <option>Exploratory Conversation</option>
+                    <option>Research Collaboration</option>
+                    <option>Strategic Partnership</option>
+                    <option>General Enquiry</option>
+                  </select>
+                </div>
+
+                <div class="space-y-2">
+                  <label class="text-[10px] uppercase tracking-widest font-bold text-charcoal/60">Your Message</label>
+                  <textarea rows="6" placeholder="How can we work together?" class="w-full bg-white border border-accent/10 px-6 py-4 rounded-sm focus:outline-none focus:border-accent transition-colors resize-none"></textarea>
+                </div>
+
+                <button type="submit" class="w-full bg-primary text-bone font-bold py-5 rounded-sm hover:bg-accent transition-all uppercase tracking-widest text-xs shadow-lg">
+                  Submit Enquiry
+                </button>
+              </form>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <Footer />
+</Layout>
+
+<style>
+  @keyframes fade-in {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .animate-fade-in {
+    animation: fade-in 1s ease-out forwards;
+  }
+</style>

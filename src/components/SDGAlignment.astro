@@ -1,0 +1,139 @@
+---
+import { Image } from 'astro:assets';
+import sdgWheel from '../assets/images/sdg_wheel.png';
+import sdgLogo from '../assets/images/sdg_logo.png';
+
+const sdgs = [
+  {
+    number: "02",
+    title: "Zero Hunger",
+    description: "Centring maternal and neonatal nutrition during the first 1,000 days to ensure a foundation for healthy growth.",
+    color: "#1C7B32", // SDG 2 Green
+    target: "Target 2.2",
+    href: "https://sdgs.un.org/goals/goal2"
+  },
+  {
+    number: "03",
+    title: "Good Health & Well-being",
+    description: "Reducing maternal and neonatal mortality through evidence-led interventions and preventative education.",
+    color: "#4C9F38", // SDG 3 Darker Green
+    target: "Target 3.1, 3.2",
+    href: "https://sdgs.un.org/goals/goal3"
+  },
+  {
+    number: "05",
+    title: "Gender Equality",
+    description: "Ensuring universal access to sexual and reproductive health and reproductive rights for adolescent girls.",
+    color: "#FF3A21", // SDG 5 Red
+    target: "Target 5.6",
+    href: "https://sdgs.un.org/goals/goal5"
+  },
+  {
+    number: "10",
+    title: "Reduced Inequalities",
+    description: "Dismantling health inequalities by making under-represented groups visible in decision-making data.",
+    color: "#DD1367", // SDG 10 Pink/Red
+    target: "Target 10.3",
+    href: "https://sdgs.un.org/goals/goal10"
+  }
+];
+---
+
+<section class="bg-primary py-24 md:py-32 px-6 relative overflow-hidden">
+  <!-- Subtle Background Pattern -->
+  <div class="absolute inset-0 opacity-[0.03] pointer-events-none">
+    <div class="absolute top-0 right-0 w-1/2 h-full border-l border-white/20"></div>
+  </div>
+
+  <div class="container mx-auto max-w-6xl relative z-10">
+    
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start mb-20">
+      <div class="lg:col-span-5 space-y-6">
+        <span class="text-accent font-sans font-bold tracking-[0.2em] text-sm uppercase block">
+          Global Alignment
+        </span>
+        <h2 class="font-serif text-4xl md:text-5xl text-bone leading-tight">
+          Committed to the <br/><span class="italic text-accent">Global Goals.</span>
+        </h2>
+      </div>
+      <div class="lg:col-span-7 lg:pt-14">
+        <p class="text-bone/70 text-xl leading-relaxed max-w-2xl border-l border-accent/30 pl-8">
+          The Ilori Foundation’s mission is intrinsically linked to the United Nations Sustainable Development Goals. We anchor our research and design in these global frameworks to ensure measurable, scalable impact.
+        </p>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 items-start">
+      {sdgs.map((sdg) => (
+        <div 
+          class="group bg-white/5 border border-white/10 p-8 transition-all duration-500 flex flex-col justify-between min-h-[380px] h-fit relative overflow-hidden sdg-card"
+          style={`--sdg-color: ${sdg.color}`}
+        >
+          <div class="space-y-4 relative z-10">
+            <div class="flex justify-between items-start">
+              <span class="text-xs font-sans font-bold text-accent/50 group-hover:text-bone/60 uppercase tracking-widest transition-colors">
+                Goal {sdg.number}
+              </span>
+              <div 
+                class="w-3 h-3 rounded-full transition-colors duration-500 group-hover:bg-bone" 
+                style={`background-color: ${sdg.color}`}
+              ></div>
+            </div>
+            <h3 class="font-serif text-2xl text-bone group-hover:text-white font-bold leading-tight transition-colors">
+              {sdg.title}
+            </h3>
+          </div>
+          
+          <div class="space-y-4 relative z-10 pt-8 flex-grow flex flex-col justify-between">
+            <p class="text-bone/60 group-hover:text-bone/90 text-sm leading-relaxed transition-colors">
+              {sdg.description}
+            </p>
+            <div class="space-y-0 group-hover:space-y-4 transition-all duration-500">
+              <span class="inline-block text-[10px] font-sans font-bold text-accent group-hover:text-bone uppercase tracking-widest border-t border-white/10 group-hover:border-white/20 pt-4 w-full transition-colors">
+                {sdg.target}
+              </span>
+              <div class="max-h-0 opacity-0 overflow-hidden transition-all duration-500 group-hover:max-h-20 group-hover:opacity-100">
+                <a 
+                  href={sdg.href} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  class="inline-flex items-center gap-2 text-[10px] font-sans font-bold text-bone uppercase tracking-[0.2em] border border-white/40 px-4 py-2 hover:bg-white hover:text-primary transition-all w-full justify-center"
+                >
+                  Read More
+                  <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <div class="mt-20 flex flex-col md:flex-row items-center justify-between gap-8 py-10 border-y border-white/5">
+      <div class="flex items-center gap-8">
+        <Image src={sdgWheel} alt="UN SDG Wheel" class="h-16 w-16 object-contain" />
+        <div>
+          <p class="text-bone/40 text-xs uppercase tracking-widest font-bold mb-1">
+            Official Framework
+          </p>
+          <p class="text-bone text-sm font-sans">
+            UN Sustainable Development Goals 2030
+          </p>
+        </div>
+      </div>
+      <div class="flex items-center gap-6 grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all">
+        <Image src={sdgLogo} alt="UN SDG Logo" class="h-14 w-auto object-contain" />
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<style>
+  .sdg-card:hover {
+    background-color: var(--sdg-color);
+    border-color: transparent;
+  }
+</style>
