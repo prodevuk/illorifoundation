@@ -47,7 +47,7 @@ const sdgs = [
 
   <div class="container mx-auto max-w-6xl relative z-10">
     
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start mb-20">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start mb-20 reveal">
       <div class="lg:col-span-5 space-y-6">
         <span class="text-accent font-sans font-bold tracking-[0.2em] text-sm uppercase block">
           Global Alignment
@@ -64,10 +64,10 @@ const sdgs = [
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 items-start">
-      {sdgs.map((sdg) => (
+      {sdgs.map((sdg, index) => (
         <div 
-          class="group bg-white/5 border border-white/10 p-8 transition-all duration-500 flex flex-col justify-between min-h-[380px] h-fit relative overflow-hidden sdg-card"
-          style={`--sdg-color: ${sdg.color}`}
+          class="group bg-white/5 border border-white/10 p-8 transition-all duration-500 flex flex-col justify-between min-h-[380px] h-fit relative overflow-hidden sdg-card reveal"
+          style={`--sdg-color: ${sdg.color}; transition-delay: ${index * 150}ms`}
         >
           <div class="space-y-4 relative z-10">
             <div class="flex justify-between items-start">

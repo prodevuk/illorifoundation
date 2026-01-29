@@ -16,5 +16,35 @@ import "../styles/global.css";
 	</head>
 	<body class="bg-bone text-charcoal antialiased">
 		<slot />
+
+    <script>
+      const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+            // Once the animation is triggered, we can stop observing this element
+            // observer.unobserve(entry.target); 
+          }
+        });
+      }, observerOptions);
+
+      // Function to initialize observer on reveal elements
+      function initReveal() {
+        const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+        revealElements.forEach(el => observer.observe(el));
+      }
+
+      // Initialize on load
+      initReveal();
+
+      // Re-initialize on view transition if you use Astro's View Transitions
+      document.addEventListener('astro:after-swap', initReveal);
+    </script>
 	</body>
 </html>

@@ -24,7 +24,7 @@ const stats = [
 <section class="bg-bone py-24 md:py-32 px-6 border-y border-accent/10">
   <div class="container mx-auto max-w-6xl">
     
-    <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+    <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8 reveal">
       <div class="max-w-xl">
         <span class="text-accent font-sans font-bold tracking-[0.2em] text-sm uppercase block mb-4">
           Evidence-Based Progress
@@ -41,7 +41,7 @@ const stats = [
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-0 border border-accent/20">
       {stats.map((stat, index) => (
-        <div class={`p-10 md:p-12 flex flex-col items-start transition-all duration-500 hover:bg-white group ${index !== stats.length - 1 ? 'border-b md:border-b-0 md:border-r border-accent/20' : ''}`}>
+        <div class={`p-10 md:p-12 flex flex-col items-start transition-all duration-500 hover:bg-white group reveal ${index !== stats.length - 1 ? 'border-b md:border-b-0 md:border-r border-accent/20' : ''}`} style={`transition-delay: ${index * 150}ms`}>
           <div class="w-12 h-12 rounded-full bg-primary/5 flex items-center justify-center mb-8 group-hover:bg-accent/10 transition-colors">
             <svg class="w-6 h-6 text-primary group-hover:text-accent transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d={stat.icon} />

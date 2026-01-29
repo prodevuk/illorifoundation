@@ -53,10 +53,10 @@ const carouselImages = [
   <div class="container mx-auto px-6 md:px-12 relative z-20 pt-40 md:pt-32 lg:pt-20">
     
     <!-- Content Area: Using an asymmetric layout -->
-    <div class="max-w-3xl space-y-10">
+    <div class="max-w-3xl space-y-10 reveal">
       
       <div class="space-y-6">
-        <span class="text-accent font-sans font-bold tracking-[0.3em] text-sm uppercase block animate-fade-in">
+        <span class="text-accent font-sans font-bold tracking-[0.3em] text-sm uppercase block">
           The Ilori Foundation
         </span>
         
@@ -70,7 +70,7 @@ const carouselImages = [
         </p>
       </div>
       
-      <div class="flex flex-wrap gap-6 items-center">
+      <div class="flex flex-wrap gap-6 items-center reveal-delay-200">
         <a href="/contact" class="bg-accent text-primary font-bold py-4 px-10 rounded-sm hover:bg-white transition-all duration-300 transform hover:-translate-y-1 shadow-lg">
           Support Our Mission
         </a>
@@ -95,15 +95,6 @@ const carouselImages = [
 </section>
 
 <style>
-  @keyframes fade-in {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-  
-  .animate-fade-in {
-    animation: fade-in 1s ease-out forwards;
-  }
-
   /* Carousel Animation Logic (CSS-Only) */
   .carousel-slide {
     animation: carouselFade 18s infinite;
