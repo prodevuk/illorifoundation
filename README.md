@@ -1,47 +1,53 @@
-# Astro Starter Kit: Basics
+# Ilori Foundation
 
-```sh
-yarn create astro@latest -- --template basics
-```
+Website for the Ilori Foundation, aligned with the UN Sustainable Development Goals (SDGs).
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Tech stack
 
-## 🚀 Project Structure
+- [Astro](https://astro.build) 5
+- [Tailwind CSS](https://tailwindcss.com) 4
 
-Inside of your Astro project, you'll see the following folders and files:
+## Project structure
 
 ```text
 /
 ├── public/
 │   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
+├── src/
+│   ├── assets/
+│   │   └── images/          # SDG assets, logo, founder photo, etc.
+│   ├── components/
+│   │   ├── About.astro
+│   │   ├── Footer.astro
+│   │   ├── Header.astro
+│   │   ├── Hero.astro
+│   │   ├── ImpactStats.astro
+│   │   ├── LatestStories.astro
+│   │   ├── Logo.astro
+│   │   ├── MissionWindow.astro
+│   │   └── SDGAlignment.astro
+│   ├── layouts/
+│   │   └── Layout.astro
+│   ├── pages/
+│   │   ├── index.astro      # Home
+│   │   ├── founder.astro    # Founder story
+│   │   └── contact.astro    # Contact
+│   └── styles/
+│       └── global.css
+├── astro.config.mjs
 └── package.json
 ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+## Commands
 
-## 🧞 Commands
+| Command           | Action                                      |
+| :---------------- | :------------------------------------------ |
+| `yarn install`    | Install dependencies                        |
+| `yarn dev`       | Start dev server at `localhost:4321`        |
+| `yarn build`     | Build for production to `./dist/`           |
+| `yarn preview`   | Preview the production build locally        |
+| `yarn astro ...` | Run Astro CLI (e.g. `astro add`, `astro check`) |
 
-All commands are run from the root of the project, from a terminal:
+## SDG alignment
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `yarn install`             | Installs dependencies                            |
-| `yarn dev`             | Starts local dev server at `localhost:4321`      |
-| `yarn build`           | Build your production site to `./dist/`          |
-| `yarn preview`         | Preview your build locally, before deploying     |
-| `yarn astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `yarn astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
-# illorifoundation
+The site highlights alignment with SDGs 2 (Zero Hunger), 3 (Good Health & Well-being), 5 (Gender Equality), and 10 (Reduced Inequalities), using the official UN SDG hex colours in the SDG Alignment section.
