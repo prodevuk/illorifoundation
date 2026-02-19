@@ -1,7 +1,10 @@
 ---
 import "../styles/global.css";
-import  SpeedInsights  from "@vercel/speed-insights/astro"
-import Analytics from '@vercel/analytics/astro'
+import SpeedInsights from "@vercel/speed-insights/astro";
+import Analytics from '@vercel/analytics/astro';
+
+// Only load Vercel analytics on Vercel deployments
+const isVercel = import.meta.env.VERCEL === '1' || import.meta.env.VERCEL_ENV;
 ---
 
 <!doctype html>
@@ -15,8 +18,8 @@ import Analytics from '@vercel/analytics/astro'
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
 		<title>Ilori Foundation</title>
-    <SpeedInsights />
-    <Analytics />
+    {isVercel && <SpeedInsights />}
+    {isVercel && <Analytics />}
 	</head>
 	<body class="bg-bone text-charcoal antialiased">
 		<slot />
